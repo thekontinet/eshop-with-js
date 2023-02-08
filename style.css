@@ -5,12 +5,33 @@
 }
 
 .header{
+    position: fixed;
     background-color: #333;
     color: #f9f9f9;
     padding: 1rem 4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+}
+
+.counter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+}
+
+.counter:empty{
+    display: none;
 }
 
 .section{
@@ -20,14 +41,15 @@
 
 .product-list{
     display: flex;
+    flex-wrap: wrap;
     gap: 1.2rem;
     padding: 3rem 0;
 }
 
 .product-card{
     background-color: #fff;
-    flex: 1;
     border-radius: .5rem;
+    width: 49%;
 }
 
 .product-card > img{
@@ -111,6 +133,7 @@
     font-weight: 500;
     border-radius: .2rem;
     transition: all .5s;
+    position: relative;
 }
 
 .icon-button:hover{

@@ -5,43 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eshop Project</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
-    <script src="app.js"></script>
+    <script src="script.js" defer></script>
+    <script src="app.js" defer></script>
 </head>
 <body>
     <div>
         <header class="header">
             <h1>Eshop</h1>
-            <span>ICON</span>
+            <button class="icon-button" data-toggle="#cart-modal"><i class="bx bx-cart bx-md"></i><span class="counter" data-counter></span></button>
         </header>
         <main>
             <section class="section">
                 <h1>Products</h1>
-                <div class="product-list">
-                    <div class="product-card">
-                        <img src="https://via.placeholder.com/150" alt="product image">
-                        <div class="content">
-                            <h4>Product title</h4>
-                            <p>$100.00</p>
-                            <button class="button">Add To Cart</button>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://via.placeholder.com/150" alt="product image">
-                        <div class="content">
-                            <h4>Product title</h4>
-                            <p>$100.00</p>
-                            <button class="button">Add To Cart</button>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://via.placeholder.com/150" alt="product image">
-                        <div class="content">
-                            <h4>Product title</h4>
-                            <p>$100.00</p>
-                            <button class="button">Add To Cart</button>
-                        </div>
-                    </div>
+                <div class="product-list" id="product-list">
+                    <!-- Product will be add from javascript -->
                 </div>
             </section>
         </main>
@@ -49,41 +28,25 @@
 
 
     <!-- Cart Modal Box -->
-    <div class="modal">
+    <div class="modal" id="cart-modal" style="display: none;">
         <div class="modal-content">
             <header class="cart-header">
-                <h4>Cart (10)</h4>
-                <button class="icon-button">X</button>
+                <h4>Cart (<span data-counter></span>)</h4>
+                <button class="icon-button" data-toggle="#cart-modal">X</button>
             </header>
-            <div>
-                <div class="cart-item">
-                    <div class="cart-image-container">
-                        <img src="https:via.placeholder.com/50" alt="item image">
-                        <div>
-                            <h4>Product name</h4>
-                            <p>$40.00</p>
-                        </div>
-                    </div>
-                    <span>X7</span>
-                    <span>$700.00</span>
-                    <button class="icon-button">X</button>
-                </div>
-                <div class="cart-item">
-                    <div class="cart-image-container">
-                        <img src="https:via.placeholder.com/50" alt="item image">
-                        <div>
-                            <h4>Product name</h4>
-                            <p>$40.00</p>
-                        </div>
-                    </div>
-                    <span>X7</span>
-                    <span>$700.00</span>
-                    <button class="icon-button">X</button>
-                </div>
-                
+            <div id="cart-list">
+                <!-- list of cart item add with js -->
             </div>
-            <button class="button">Checkout</button>
+            <div>
+                <span>Total</span>
+                <span id="cart-total">400</span>
+            </div>
+            <form id="checkout-form">
+                <input type="email" name="email" placeholder="Email Address">
+                <button class="button">Checkout</button>
+            </form>
         </div>
     </div>
+    <script src="https://js.paystack.co/v1/inline.js"></script> 
 </body>
 </html>
